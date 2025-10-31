@@ -1,0 +1,101 @@
+### 1. Create a valid book (Success)
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publicationYear": 2008
+}
+
+### 2. Create duplicate ISBN (Conflict)
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publicationYear": 2008
+}
+
+### 3. Create with invalid data (Validation Errors)
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "",
+  "isbn": "invalid",
+  "publicationYear": 1800
+}
+
+### 4. Get all books (Success)
+GET http://localhost:8080/api/v1/books
+
+### 5. Get existing book by ID (Success)
+GET http://localhost:8080/api/v1/books/1
+
+### 6. Get non-existent book (Not Found)
+GET http://localhost:8080/api/v1/books/999
+
+### 7. Update existing book (Success)
+PUT http://localhost:8080/api/v1/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publicationYear": 2008
+}
+
+### 8. Update with invalid data (Validation Errors)
+PUT http://localhost:8080/api/v1/books/1
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "",
+  "isbn": "invalid",
+  "publicationYear": 1800
+}
+
+### 9. Update non-existent book (Not Found)
+PUT http://localhost:8080/api/v1/books/999
+Content-Type: application/json
+
+{
+  "title": "Non-existent Book",
+  "author": "Unknown",
+  "isbn": "1234567890",
+  "publicationYear": 2023
+}
+
+### 10. Delete existing book (Success)
+DELETE http://localhost:8080/api/v1/books/1
+
+### 11. Delete non-existent book (Not Found)
+DELETE http://localhost:8080/api/v1/books/999
+
+### 12. Additional test data
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "Design Patterns",
+  "author": "Erich Gamma",
+  "isbn": "9780201633610",
+  "publicationYear": 1994
+}
+
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "Refactoring",
+  "author": "Martin Fowler",
+  "isbn": "9780134757599",
+  "publicationYear": 2018
+}
