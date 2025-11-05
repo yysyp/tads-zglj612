@@ -17,11 +17,11 @@
 1，用英文输出所有的代码，配置和注释
 2，应用部署会有多个实例，需要考虑分布式，同步等问题，技术设计要考虑系统安全性，系统容错，自动恢复，线程安全，trace可观测，audit审计等问题。
 3，Spring框架基于spring-boot 3.2.1版本。
-4，良好的分层设计，提供Request，Response，Entity对象，以及他们之间的转换Converter工具类。
+4，良好的分层设计，提供Request，Response，Entity对象，以及他们之间的转换的工具类。
 5，Controller类加上完整的基于“Swagger v3”的声明配置。并生成测试这些接口的http文件。
 6，对于非连接作用的Entity实体，需要有createdAt，createdBy，updatedAt，updatedBy字段。
 7，提供完整的配置文件。
-用户需求（概要）：
+用户需求（概要）： 
 创建一个springboot项目，使用h2数据库，提供book的增删改查接口，并提供swagger文档。
 
 
